@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="حصين AI منصة ذكية لفحص أمن المواقع وتحليل الثغرات الأمنية">
+<title>حصين AI | الأمن السيبراني الذكي</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080e19;
+  color: #f1f5f9;
+  line-height: 1.8;
+}
+
+header {
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #26364b;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.logo span {
+  color: white;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.hero {
+  text-align: center;
+  padding: 75px 20px 55px;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid #164e63;
+  color: #38bdf8;
+  padding: 5px 15px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(30px, 6vw, 48px);
+  line-height: 1.4;
+}
+
+h1 span {
+  color: #38bdf8;
+}
+
+.hero p {
+  color: #94a3b8;
+  margin: 18px auto;
+  max-width: 600px;
+}
+
+.scan-box {
+  max-width: 650px;
+  margin: 30px auto;
+  background: #111c2d;
+  border: 1px solid #26364b;
+  padding: 12px;
+  border-radius: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.scan-box input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+}
+
+button {
+  background: #0284c7;
+  color: white;
+  border: 0;
+  padding: 13px 22px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0369a1;
+}
+
+#message {
+  color: #fbbf24;
+  font-size: 14px;
+  min-height: 30px;
+}
+
+.section {
+  padding: 35px 7% 70px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #111c2d;
+  border: 1px solid #26364b;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.card .icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.status {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  background: #111c2d;
+  border: 1px solid #26364b;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.status h2 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.status p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #26364b;
+  color: #64748b;
+  font-size: 13px;
+}
+
+@media(max-width:600px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  nav a {
+    margin: 0 4px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .scan-box {
+    flex-direction: column;
+  }
+
+  .scan-box button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🛡️ حصين <span>AI</span></div>
+  <nav>
+    <a href="#services">خدماتنا</a>
+    <a href="#about">عن المنصة</a>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="tag">منصة الأمن السيبراني الذكي</div>
+
+  <h1>احمِ موقعك مع <span>حصين AI</span></h1>
+
+  <p>
+    منصة ذكية تساعدك على اكتشاف نقاط الضعف الأمنية
+    وتحليل المخاطر واقتراح الحلول لحماية موقعك الإلكتروني.
+  </p>
+
+  <div class="scan-box">
+    <input
+      id="website"
+      type="url"
+      placeholder="أدخل رابط موقعك (https://example.com)"
+    >
+
+    <button onclick="startScan()">
+      افحص موقعي
+    </button>
+  </div>
+
+  <div id="message"></div>
+
+</section>
+
+<section class="status" id="about">
+
+  <h2>🛡️ أمان موقعك يستحق الاهتمام</h2>
+
+  <p>
+    حصين AI يعمل على تطوير نظام لفحص المواقع وتحليل
+    الإعدادات الأمنية وتقديم توصيات تساعد أصحاب المواقع
+    على تحسين مستوى الحماية.
+  </p>
+
+</section>
+
+<section class="section" id="services">
+
+  <h2>خدمات حصين AI</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🔍</div>
+      <h3>فحص المواقع</h3>
+      <p>تحليل الإعدادات الأمنية واكتشاف نقاط الضعف المحتملة.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚠️</div>
+      <h3>اكتشاف الثغرات</h3>
+      <p>تحديد المشكلات الأمنية وتصنيفها حسب مستوى الخطورة.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>التحليل الذكي</h3>
+      <p>شرح النتائج وتقديم توصيات واضحة باللغة العربية.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛠️</div>
+      <h3>الإصلاح الذكي</h3>
+      <p>اقتراح التعديلات الأمنية وتطبيقها بعد موافقة مالك الموقع.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>التقارير الأمنية</h3>
+      <p>تقارير منظمة توضح النتائج والمخاطر وطرق المعالجة.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔐</div>
+      <h3>حماية المواقع</h3>
+      <p>مساعدة أصحاب المواقع على تحسين إعدادات الحماية.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  حصين AI © 2026 - جميع الحقوق محفوظة
+  <br>
+  الأمن يبدأ بخطوة.
+</footer>
+
+<script>
+function startScan() {
+
+  const input = document.getElementById("website");
+  const message = document.getElementById("message");
+
+  const value = input.value.trim();
+
+  if (!value) {
+    message.textContent = "يرجى إدخال رابط الموقع أولاً.";
+    return;
+  }
+
+  try {
+
+    const url = new URL(value);
+
+    if (!["http:", "https:"].includes(url.protocol)) {
+      throw new Error();
+    }
+
+    message.textContent =
+      "تم استلام الرابط. محرك الفحص الأمني قيد التطوير.";
+
+  } catch (e) {
+
+    message.textContent =
+      "يرجى إدخال رابط صحيح يبدأ بـ https://";
+
+  }
+}
+</script>
+
+</body>
+</html>
